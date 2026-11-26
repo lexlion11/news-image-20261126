@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World in One Day — Thursday 26 November 2026</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{width:1024px;height:1024px;overflow:hidden;margin:0;padding:0}
+  body{background:#e9dfc8;color:#16203a;font-family:Helvetica,Arial,sans-serif;font-size:12px}
+  .wrap{width:1024px;height:1024px;background:#e9dfc8;position:relative;overflow:hidden}
+
+  /* ---------- 1. MASTHEAD 0-104 ---------- */
+  .mast{height:104px;padding:4px 16px 0;background:#fbf6ea;border-bottom:4px solid #16203a}
+  .kick{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#16203a}
+  .date{font-family:Georgia,'Times New Roman',Times,serif;font-size:52px;font-weight:900;
+        line-height:0.86;letter-spacing:-1.4px;margin-top:4px;color:#16203a}
+  .lead{font-family:Georgia,'Times New Roman',Times,serif;font-size:13px;font-weight:700;
+        font-style:italic;color:#a3121f;margin-top:5px;letter-spacing:0.1px}
+  .sub{font-size:9px;font-weight:600;color:#3a4354;margin-top:3px;letter-spacing:0.1px}
+
+  /* ---------- 2. REGION BAR 104-152 ---------- */
+  .stats{height:48px;display:flex}
+  .scell{flex:1;padding:3px 5px 0;color:#fbf6ea;overflow:hidden}
+  .sname{font-size:7px;font-weight:700;letter-spacing:0.15px;line-height:1.05}
+  .scount{font-family:Georgia,'Times New Roman',Times,serif;font-size:19px;font-weight:900;
+          line-height:1.02}
+  .sstat{font-size:6.5px;font-weight:700;letter-spacing:0.05px;margin-top:1px;line-height:1.1}
+
+  /* ---------- 3. FIELD TAXONOMY BAR 152-170 ---------- */
+  .fbar{height:18px;background:#16203a;color:#e9dfc8;display:flex;align-items:center;
+        padding:0 16px;font-size:8px;font-weight:700;letter-spacing:0.3px}
+
+  /* ---------- 4. THE DAY IN UTC 170-200 ---------- */
+  .utc{height:30px;background:#3d5a80;color:#f2ead8;display:flex;align-items:center;
+       padding:0 12px;overflow:hidden}
+  .utcl{font-size:8.5px;font-weight:700;letter-spacing:0.8px;color:#f0c25c;width:96px;
+        flex:none;line-height:1.12}
+  .stamp{flex:1;font-size:7px;line-height:1.12;font-weight:600;color:#dde6f0;min-width:0;
+        padding-right:6px}
+  .stamp b{display:block;font-family:Georgia,'Times New Roman',Times,serif;font-size:11px;
+        font-weight:900;color:#ffffff}
+
+  /* ---------- 5. HOW SURE 200-214 ---------- */
+  .howsure{height:14px;border-bottom:1px solid #16203a;background:#dfe4ea;
+           display:flex;align-items:center;padding:0 16px;
+           font-size:7.5px;font-weight:700;letter-spacing:0.2px;color:#16203a}
+  .sq{display:inline-block;width:8px;height:8px;margin:0 4px 0 9px;vertical-align:-1px}
+
+  /* ---------- 6. HEROES 214-424 ---------- */
+  .heroes{height:210px;padding:7px 16px 0;display:flex;gap:12px}
+  .hero{flex:1;min-width:0}
+  .illus{display:block;width:100%;height:78px;border:1px solid #16203a}
+  .hrow{display:flex;justify-content:space-between;align-items:flex-start;margin-top:4px}
+  .hlabel{font-size:8.5px;font-weight:700;letter-spacing:0.45px;color:#16203a;line-height:1.25}
+  .hstat{font-family:Georgia,'Times New Roman',Times,serif;font-size:21px;font-weight:900;
+         line-height:0.9;text-align:right;color:#16203a;white-space:nowrap}
+  .hstat span{display:block;font-family:Helvetica,Arial,sans-serif;font-size:6.5px;font-weight:700;
+         letter-spacing:0.25px;margin-top:2px;color:#8a5a1e}
+  .hhead{font-family:Georgia,'Times New Roman',Times,serif;font-size:15px;font-weight:900;
+         line-height:1.08;letter-spacing:-0.2px;color:#16203a;margin-top:4px}
+  .hdet{font-size:9px;line-height:1.22;color:#2b3446;margin-top:3px}
+  .hwhy{margin-top:3px;font-size:7.5px;line-height:1.2;color:#16203a;
+        border-left:3px solid #a3121f;padding-left:5px}
+  .hwhy b{font-weight:700;letter-spacing:0.5px;color:#a3121f}
+  .hsrc{font-size:7px;font-weight:700;letter-spacing:0.5px;color:#6c7586;margin-top:2px}
+  .hb{display:inline-block;color:#fff;font:700 9px Helvetica,Arial,sans-serif;
+      padding:1px 4px;margin-right:4px;vertical-align:1px}
+
+  /* ---------- 7. LEAD BAND 424-644 ---------- */
+  .band{height:246px;background:#16203a;padding:5px 16px 0}
+  .bhead{font-size:8.5px;font-weight:700;letter-spacing:0.8px;color:#f0c25c;height:11px;
+         line-height:11px}
+  .leads{display:flex;flex-wrap:wrap;gap:6px}
+  .lcard{flex:0 0 136px;height:112px;background:#fbf6ea;border-top:3px solid #16203a;
+         position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+  .lillus{display:block;width:136px;height:34px;flex:none}
+  .lhead{font-family:Georgia,'Times New Roman',Times,serif;font-size:8.5px;font-weight:900;
+         line-height:1.08;color:#16203a;padding:3px 4px 0;flex:none}
+  .ldet{font-size:6.5px;line-height:1.14;color:#3a4354;padding:2px 4px 0;flex:1 1 auto;
+        overflow:hidden}
+  .lfoot{flex:none;display:flex;align-items:flex-end;justify-content:space-between;
+         padding:0 4px 3px 4px;gap:3px}
+  .lstat{background:#16203a;color:#f0c25c;
+         font-family:Georgia,'Times New Roman',Times,serif;font-size:12px;font-weight:900;
+         line-height:0.95;padding:2px 4px 3px 5px;text-align:right}
+  .lstat span{display:block;font-family:Helvetica,Arial,sans-serif;font-size:5.5px;font-weight:700;
+         letter-spacing:0.25px;color:#fbf6ea}
+
+  /* ---------- 8. MAP + WIRE 644-1002 ---------- */
+  .lower{height:332px;padding:7px 16px 0;display:flex;gap:12px}
+  .mapcol{width:392px;flex:none}
+  .mhead{font-size:8px;font-weight:700;letter-spacing:0.6px;color:#16203a;height:11px;
+         line-height:11px}
+  .map{display:block;width:392px;height:250px;border:1px solid #16203a;background:#d7dfe8}
+  .map .land{stroke:#fbf6ea;stroke-width:0.5;fill-opacity:0.92}
+  .map .pin{font-family:Helvetica,Arial,sans-serif;font-size:7px;font-weight:700;fill:#ffffff}
+  .map circle.pindot{stroke:#16203a;stroke-width:0.7}
+  .mleg{font-size:7px;font-weight:700;letter-spacing:0.05px;color:#16203a;margin-top:3px;
+        line-height:1.35}
+  .dot{display:inline-block;width:7px;height:7px;margin:0 3px 0 6px;vertical-align:-1px}
+
+  .wirecol{flex:1;min-width:0;background:#fbf6ea;border-left:4px solid #16203a;padding:5px 9px 0}
+  .whead{font-size:8.5px;font-weight:700;letter-spacing:0.7px;color:#16203a;height:12px;
+         line-height:12px}
+  .wcols{display:flex;gap:8px}
+  .wcol{flex:1;min-width:0}
+  .w{font-size:7px;line-height:10.4px;color:#16203a}
+  .w i{font-style:normal;color:#6c7586}
+  .tg{display:inline-block;color:#fff;font:700 5.5px Helvetica,Arial,sans-serif;
+      letter-spacing:0.25px;padding:1px 2px;margin-right:2px;vertical-align:1px;
+      border-radius:1px}
+  .b{display:inline-block;color:#fff;font:700 7px Helvetica,Arial,sans-serif;
+     padding:0 2px;margin-right:2px;vertical-align:1px;border-radius:1px}
+  .datestrip{margin-top:4px;display:flex;gap:7px;align-items:stretch}
+  .datebox{flex:none;width:196px;border:2px solid #a3121f;padding:2px 6px;background:#fbf6ea}
+  .datebox .dh{font-size:7px;font-weight:700;letter-spacing:1.1px;color:#a3121f}
+  .datebox .dtbig{font-family:Georgia,'Times New Roman',Times,serif;font-size:13px;
+                  font-weight:900;line-height:1.06;color:#16203a;margin-top:1px}
+  .datebox .dt{font-size:7px;font-weight:700;line-height:1.15;color:#3a4354}
+  .countbox{flex:1;min-width:0;background:#16203a;color:#e9dfc8;padding:2px 7px}
+  .countbox .fcounts{font-size:8px;font-weight:700;letter-spacing:0.3px;color:#f0c25c}
+  .countbox .fnote{font-size:6.5px;line-height:1.25;color:#c3cede;margin-top:1px}
+
+  /* ---------- 9. FOOTER 1002-1024 ---------- */
+  .foot{height:22px;background:#16203a;color:#e9dfc8;display:flex;align-items:center;
+        justify-content:space-between;padding:0 16px;font-size:8px;font-weight:700;
+        letter-spacing:0.35px}
+  .foot-r{color:#f0c25c}
+
+  /* confidence chips */
+  .chip{display:inline-block;color:#fff;font:700 7px Helvetica,Arial,sans-serif;
+        letter-spacing:0.45px;padding:1px 3px;border-radius:1px}
+  .c-off{background:#16203a}.c-con{background:#1f6b52}.c-rep{background:#a8641b}
+  .c-cla{background:#a3121f}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= 1. MASTHEAD ================= -->
+  <div class="mast">
+    <div class="kick">THE WORLD IN ONE DAY&nbsp;&nbsp;·&nbsp;&nbsp;THURSDAY 26 NOVEMBER 2026&nbsp;&nbsp;·&nbsp;&nbsp;55 VERIFIED STORIES&nbsp;&nbsp;·&nbsp;&nbsp;10 NAMED REGIONS&nbsp;&nbsp;·&nbsp;&nbsp;18 NEWS SECTIONS</div>
+    <div class="date">26 November 2026</div>
+    <div class="lead">Tanker fire kills at least 31 on the Cairo ring road&nbsp;&nbsp;·&nbsp;&nbsp;US inflation hits a three-year high&nbsp;&nbsp;·&nbsp;&nbsp;Two tankers hit mines in the Strait of Hormuz</div>
+    <div class="sub">One day, fifty-five reported events — every item below is dated Thursday 26 November 2026 and drawn from that day's own reporting.</div>
+  </div>
+
+  <!-- ================= 2. REGION BAR ================= -->
+  <div class="stats">
+    <div class="scell" style="background:#2a3f6b"><div class="sname">NORTH AMERICA</div><div class="scount">16</div><div class="sstat">PCE 3.8%, THREE-YEAR HIGH</div></div>
+    <div class="scell" style="background:#3f6b8a"><div class="sname">LATIN AMERICA</div><div class="scount">3</div><div class="sstat">5 PROVINCES BLACKOUT</div></div>
+    <div class="scell" style="background:#5b3a70"><div class="sname">EUROPE</div><div class="scount">8</div><div class="sstat">500,000 RUSSIAN DEATHS</div></div>
+    <div class="scell" style="background:#6b1f2e"><div class="sname">MIDDLE EAST</div><div class="scount">6</div><div class="sstat">BRENT $94.61, +3.5%</div></div>
+    <div class="scell" style="background:#2f6b52"><div class="sname">AFRICA</div><div class="scount">3</div><div class="sstat">$227m METH LAB SEIZED</div></div>
+    <div class="scell" style="background:#b5563c"><div class="sname">EAST ASIA</div><div class="scount">7</div><div class="sstat">78 AI STANDARDS LED</div></div>
+    <div class="scell" style="background:#a8641b"><div class="sname">KOREA &amp; JAPAN</div><div class="scount">5</div><div class="sstat">BIRTHS +14.3%, RECORD</div></div>
+    <div class="scell" style="background:#0f6f77"><div class="sname">SOUTH &amp; SE ASIA</div><div class="scount">4</div><div class="sstat">CRUDE IMPORTS AT 2018 LOW</div></div>
+    <div class="scell" style="background:#8a5a1e"><div class="sname">OCEANIA</div><div class="scount">1</div><div class="sstat">SOLOMON IS. TREATY</div></div>
+    <div class="scell" style="background:#3a4354"><div class="sname">WORLD</div><div class="scount">2</div><div class="sstat">BITCOIN BELOW $58,000</div></div>
+  </div>
+
+  <!-- ================= 3. FIELD TAXONOMY ================= -->
+  <div class="fbar">18 SECTIONS&nbsp;&nbsp;·&nbsp;&nbsp;Conflict 7&nbsp;&nbsp;·&nbsp;&nbsp;Diplomacy 6&nbsp;&nbsp;·&nbsp;&nbsp;Economy 5&nbsp;&nbsp;·&nbsp;&nbsp;Society 5&nbsp;&nbsp;·&nbsp;&nbsp;Politics 4&nbsp;&nbsp;·&nbsp;&nbsp;Crime 4&nbsp;&nbsp;·&nbsp;&nbsp;Business 3&nbsp;&nbsp;·&nbsp;&nbsp;Energy 3&nbsp;&nbsp;·&nbsp;&nbsp;Markets 3&nbsp;&nbsp;·&nbsp;&nbsp;Military 3&nbsp;&nbsp;·&nbsp;&nbsp;Sport 3&nbsp;&nbsp;·&nbsp;&nbsp;Trade 2&nbsp;&nbsp;·&nbsp;&nbsp;Tech 2&nbsp;&nbsp;·&nbsp;&nbsp;Disaster 1&nbsp;&nbsp;·&nbsp;&nbsp;Humanitarian 1&nbsp;&nbsp;·&nbsp;&nbsp;Space 1&nbsp;&nbsp;·&nbsp;&nbsp;Media 1&nbsp;&nbsp;·&nbsp;&nbsp;Science 1</div>
+
+  <!-- ================= 4. THE DAY IN UTC ================= -->
+  <div class="utc">
+    <div class="utcl">THE DAY<br>IN UTC</div>
+    <div class="stamp"><b>01:00</b>Fuel tanker burns overnight on the Greater Cairo ring road</div>
+    <div class="stamp"><b>02:00</b>Ukraine reports strikes on a major Russian air base</div>
+    <div class="stamp"><b>07:00</b>Shanghai Composite closes −2.03%; STOXX 600 −1.06%</div>
+    <div class="stamp"><b>08:00</b>European Parliament approves the EU's 2027 budget</div>
+    <div class="stamp"><b>13:30</b>US October PCE released: 3.8%, a three-year high</div>
+    <div class="stamp"><b>14:00</b>New York Thanksgiving parade called off by storm</div>
+    <div class="stamp"><b>19:00</b>Liverpool beat Club Brugge 3-0 in the Champions League</div>
+    <div class="stamp"><b>21:00</b>Wall Street closes; Nvidia down nearly 4% on the day</div>
+  </div>
+
+  <!-- ================= 5. HOW SURE ================= -->
+  <div class="howsure">
+    <span class="sq" style="background:#16203a"></span>OFFICIAL — a government, regulator or central-bank statement
+    <span class="sq" style="background:#1f6b52"></span>CONFIRMED — reported by named outlets
+    <span class="sq" style="background:#a8641b"></span>REPORTED — a single side's account
+    <span class="sq" style="background:#a3121f"></span>CLAIM — denied or unverified
+  </div>
+
+  <!-- ================= 6. HEROES ================= -->
+  <div class="heroes">
+
+    <div class="hero">
+      <svg class="illus" viewBox="0 0 320 78" preserveAspectRatio="xMidYMid slice" role="img" aria-label="An overturned fuel tanker burning on a ring road at night, with an ambulance beside it">
+        <rect x="0" y="0" width="320" height="78" fill="#1b2438"/>
+        <rect x="0" y="44" width="320" height="34" fill="#2f3a50"/>
+        <rect x="0" y="44" width="320" height="3" fill="#e8dcc0"/>
+        <rect x="0" y="66" width="320" height="12" fill="#232c40"/>
+        <g fill="#e8dcc0">
+          <rect x="6" y="52" width="18" height="3"/><rect x="42" y="52" width="18" height="3"/>
+          <rect x="78" y="52" width="18" height="3"/><rect x="114" y="52" width="18" height="3"/>
+          <rect x="186" y="52" width="18" height="3"/><rect x="222" y="52" width="18" height="3"/>
+          <rect x="258" y="52" width="18" height="3"/><rect x="294" y="52" width="18" height="3"/>
+        </g>
+        <path d="M0 40h320v5H0z" fill="#3c4a66"/>
+        <g fill="#1f2a3e">
+          <rect x="0" y="22" width="320" height="18"/>
+          <rect x="16" y="14" width="26" height="26"/>
+          <rect x="54" y="18" width="20" height="22"/>
+        </g>
+        <g fill="#f0c25c" opacity="0.85">
+          <rect x="22" y="19" width="5" height="5"/><rect x="60" y="23" width="5" height="5"/>
+          <rect x="90" y="27" width="5" height="5"/><rect x="286" y="24" width="5" height="5"/>
+        </g>
+        <g transform="rotate(-16 150 52)">
+          <rect x="96" y="42" width="108" height="21" rx="4" fill="#c8452f"/>
+          <rect x="96" y="42" width="108" height="6" rx="3" fill="#e26a4c"/>
+          <rect x="150" y="42" width="10" height="21" fill="#8f2c1d"/>
+          <rect x="196" y="39" width="18" height="14" rx="3" fill="#b03a27"/>
+          <circle cx="112" cy="66" r="7" fill="#141b28"/><circle cx="188" cy="66" r="7" fill="#141b28"/>
+          <circle cx="112" cy="66" r="3" fill="#6c7586"/><circle cx="188" cy="66" r="3" fill="#6c7586"/>
+        </g>
+        <path d="M126 62c8-12 4-22 14-30 6 8 12 6 14 16 4-4 8-2 10 4-8 2-12 8-14 16z" fill="#f08030"/>
+        <path d="M134 64c6-8 4-16 12-22 4 6 8 4 10 12-8 0-14 4-16 12z" fill="#f7c948"/>
+        <path d="M140 66c4-5 3-10 9-14 3 4 5 3 6 8-6 0-9 3-11 8z" fill="#fff0c0"/>
+        <g fill="#e8dcc0" opacity="0.55">
+          <circle cx="128" cy="20" r="7"/><circle cx="146" cy="12" r="5"/><circle cx="160" cy="24" r="6"/>
+          <circle cx="118" cy="30" r="4"/>
+        </g>
+        <g transform="translate(238 34)">
+          <rect x="0" y="12" width="56" height="16" rx="3" fill="#f2ead8"/>
+          <rect x="6" y="4" width="18" height="10" rx="2" fill="#e0d3b4"/>
+          <rect x="4" y="18" width="14" height="5" fill="#a3121f"/>
+          <rect x="22" y="18" width="14" height="5" fill="#a3121f"/>
+          <circle cx="12" cy="29" r="5" fill="#141b28"/><circle cx="44" cy="29" r="5" fill="#141b28"/>
+          <rect x="2" y="26" width="6" height="4" fill="#f7c948"/>
+        </g>
+      </svg>
+      <div class="hrow">
+        <div class="hlabel"><span class="hb" style="background:#2f6b52">1</span>CAIRO, EGYPT · AFRICA<br><span class="chip c-con">CONFIRMED</span></div>
+        <div class="hstat">31<span>KILLED, AT LEAST</span></div>
+      </div>
+      <div class="hhead">Fuel tanker overturns and burns on the Cairo ring road</div>
+      <div class="hdet">At least 31 killed and 15 injured in al-Warraq, Giza governorate; prosecutors provisionally counted 30 dead and 25 hurt, and 39 ambulances were sent</div>
+      <div class="hwhy"><b>WHY IT MATTERS</b> A tanker of petroleum products caught fire overnight and the flames spread to nearby vehicles — the deadliest single incident of the day.</div>
+      <div class="hsrc">AP · AL JAZEERA · NDTV · 26 NOVEMBER 2026</div>
+    </div>
+
+    <div class="hero">
+      <svg class="illus" viewBox="0 0 320 78" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two tankers burning after hitting mines in the Strait of Hormuz, with a refinery skyline behind">
+        <rect x="0" y="0" width="320" height="78" fill="#2a1420"/>
+        <rect x="0" y="46" width="320" height="32" fill="#3c2233"/>
+        <g fill="#2f1a26">
+          <rect x="0" y="26" width="320" height="20"/>
+          <rect x="18" y="12" width="14" height="34"/><rect x="40" y="18" width="10" height="28"/>
+          <rect x="252" y="14" width="12" height="32"/><rect x="272" y="20" width="9" height="26"/>
+        </g>
+        <g fill="#8a2436">
+          <rect x="18" y="12" width="5" height="34"/><rect x="252" y="14" width="5" height="32"/>
+        </g>
+        <g fill="#f08030" opacity="0.9">
+          <rect x="64" y="20" width="9" height="26"/><rect x="86" y="14" width="7" height="32"/>
+          <rect x="196" y="22" width="8" height="24"/><rect x="214" y="16" width="6" height="30"/>
+        </g>
+        <g transform="translate(22 34)">
+          <rect x="0" y="0" width="96" height="15" rx="7" fill="#7d4a2a"/>
+          <rect x="0" y="0" width="96" height="4" rx="2" fill="#a06a3e"/>
+          <rect x="30" y="0" width="8" height="15" fill="#5d3520"/>
+          <rect x="88" y="-4" width="16" height="11" rx="2" fill="#6b3f24"/>
+          <rect x="4" y="15" width="12" height="5" fill="#3a2018"/>
+        </g>
+        <g transform="translate(196 36)">
+          <rect x="0" y="0" width="100" height="16" rx="7" fill="#7d4a2a"/>
+          <rect x="0" y="0" width="100" height="4" rx="2" fill="#a06a3e"/>
+          <rect x="34" y="0" width="8" height="16" fill="#5d3520"/>
+          <rect x="92" y="-4" width="16" height="12" rx="2" fill="#6b3f24"/>
+        </g>
+        <path d="M112 60c6-10 2-18 10-24 4 6 9 4 10 12 4-3 7 0 8 5-7 1-10 6-12 12z" fill="#f08030"/>
+        <path d="M118 61c4-6 2-11 8-15 3 4 6 3 7 8-6 0-9 3-11 8z" fill="#f7c948"/>
+        <path d="M288 62c5-9 2-15 9-20 3 5 7 3 8 10 3-2 5 0 6 4-6 1-9 5-11 10z" fill="#f08030"/>
+        <path d="M293 63c3-5 2-9 6-12 2 3 5 2 5 6-5 0-7 2-9 6z" fill="#f7c948"/>
+        <g fill="#6b2033">
+          <path d="M132 74l6-10 6 10z"/><path d="M160 74l6-10 6 10z"/>
+          <path d="M232 74l6-10 6 10z"/><path d="M260 74l6-10 6 10z"/>
+        </g>
+      </svg>
+      <div class="hrow">
+        <div class="hlabel"><span class="hb" style="background:#6b1f2e">10</span>STRAIT OF HORMUZ · MIDDLE EAST<br><span class="chip c-rep">REPORTED</span></div>
+        <div class="hstat">2<span>TANKERS HIT MINES</span></div>
+      </div>
+      <div class="hhead">Two tankers hit mines and burn in the Strait of Hormuz</div>
+      <div class="hdet">Iran's Revolutionary Guard navy says two "illegal" tankers exploded after striking mines; Al Jazeera reported another tanker on fire in the strait</div>
+      <div class="hwhy"><b>WHY IT MATTERS</b> Hormuz is the key oil chokepoint for Gulf exports, and the same day a drone hit Saudi Arabia's largest refinery, pushing Brent to $94.61.</div>
+      <div class="hsrc">IRGC · AL JAZEERA · XINHUA · 26 NOVEMBER 2026</div>
+    </div>
+
+    <div class="hero">
+      <svg class="illus" viewBox="0 0 320 78" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A rising price gauge over a chart as US inflation reaches a three-year high">
+        <rect x="0" y="0" width="320" height="78" fill="#16203a"/>
+        <g stroke="#2f405f" stroke-width="1">
+          <path d="M20 68h284M20 50h284M20 32h284M20 14h284"/>
+        </g>
+        <path d="M20 64 L62 60 L104 58 L146 50 L188 46 L230 34 L272 20 L304 10 L304 68 L20 68 Z" fill="#b5563c"/>
+        <path d="M20 64 L62 60 L104 58 L146 50 L188 46 L230 34 L272 20 L304 10" fill="none" stroke="#f0c25c" stroke-width="2.5"/>
+        <g fill="#f0c25c">
+          <circle cx="104" cy="58" r="3"/><circle cx="188" cy="46" r="3"/><circle cx="272" cy="20" r="3"/>
+        </g>
+        <g transform="translate(196 4)">
+          <path d="M0 44a44 44 0 0 1 88 0z" fill="#0f1626" stroke="#f0c25c" stroke-width="2"/>
+          <path d="M44 44 L70 12" stroke="#a3121f" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="44" cy="44" r="6" fill="#f0c25c"/>
+          <g fill="#e9dfc8" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="700">
+            <text x="6" y="54">0</text><text x="38" y="30">3.8</text><text x="72" y="54">6</text>
+          </g>
+        </g>
+        <g font-family="Georgia,'Times New Roman',Times,serif" font-weight="900">
+          <text x="14" y="30" font-size="30" fill="#ffffff">3.8%</text>
+          <text x="16" y="42" font-size="9" fill="#f0c25c" letter-spacing="1.2">OCTOBER PCE, YEAR ON YEAR</text>
+        </g>
+      </svg>
+      <div class="hrow">
+        <div class="hlabel"><span class="hb" style="background:#2a3f6b">4</span>WASHINGTON · NORTH AMERICA<br><span class="chip c-off">OFFICIAL</span></div>
+        <div class="hstat">3.8%<span>PCE, THREE-YEAR HIGH</span></div>
+      </div>
+      <div class="hhead">US inflation hits a three-year high on October PCE</div>
+      <div class="hdet">Headline PCE rose 3.8% year on year, the highest since May 2023; core PCE rose 3.3%, above the 3.2% forecast</div>
+      <div class="hwhy"><b>WHY IT MATTERS</b> Third-quarter GDP was revised up to 4.3% annualised while durable goods orders rose only 0.2% — hot prices on a slowing real economy.</div>
+      <div class="hsrc">REUTERS · BLOOMBERG · 26 NOVEMBER 2026</div>
+    </div>
+
+  </div>
+
+  <!-- ================= 7. THE 14 OTHER LEAD STORIES ================= -->
+  <div class="band">
+    <div class="bhead">ALSO LEAD REPORTED ON THURSDAY 26 NOVEMBER 2026 — 14 MORE DRAWN STORIES, EVERY BADGE MATCHES A MAP PIN</div>
+    <div class="leads">
+
+      <div class="lcard" style="border-top-color:#2a3f6b">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A tariff schedule with a rising percentage column">
+          <rect width="136" height="46" fill="#2a3f6b"/>
+          <rect x="0" y="34" width="136" height="12" fill="#1d2d4c"/>
+          <g fill="#f0c25c"><rect x="8" y="24" width="10" height="12"/><rect x="26" y="16" width="10" height="20"/>
+            <rect x="44" y="20" width="10" height="16"/><rect x="62" y="10" width="10" height="26"/>
+            <rect x="80" y="18" width="10" height="18"/></g>
+          <g fill="#a3121f"><rect x="8" y="27" width="10" height="9"/><rect x="26" y="21" width="10" height="15"/>
+            <rect x="44" y="24" width="10" height="12"/><rect x="62" y="16" width="10" height="20"/>
+            <rect x="80" y="22" width="10" height="14"/></g>
+          <g font-family="Helvetica,Arial,sans-serif" font-weight="700" fill="#ffffff">
+            <text x="98" y="18" font-size="11">14</text>
+            <text x="98" y="28" font-size="5.5" letter-spacing="0.8">ECONOMIES</text>
+            <text x="98" y="38" font-size="6.5">15–20%</text>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#2a3f6b">2</span>US proposes new tariffs on 14 economies</div>
+        <div class="ldet">USTR survey proposes 15% to 20% duties on 14 economies; Greer says it may take months</div>
+        <div class="lfoot"><div class="lstat">14<span>ECONOMIES</span></div><span class="chip c-off">OFFICIAL</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#b5563c">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two microphones facing each other across a table">
+          <rect width="136" height="46" fill="#b5563c"/>
+          <rect x="0" y="36" width="136" height="10" fill="#8f3d2a"/>
+          <rect x="46" y="26" width="44" height="11" fill="#e9dfc8"/>
+          <rect x="52" y="8" width="5" height="19" fill="#fbf6ea"/>
+          <circle cx="54" cy="7" r="5" fill="#fbf6ea"/><circle cx="54" cy="7" r="2.5" fill="#b5563c"/>
+          <rect x="80" y="8" width="5" height="19" fill="#fbf6ea"/>
+          <circle cx="82" cy="7" r="5" fill="#fbf6ea"/><circle cx="82" cy="7" r="2.5" fill="#b5563c"/>
+          <g fill="#f0c25c"><rect x="26" y="30" width="18" height="3"/><rect x="92" y="30" width="18" height="3"/></g>
+          <g font-family="Helvetica,Arial,sans-serif" font-weight="700" fill="#ffffff">
+            <text x="6" y="12" font-size="9">BEIJING</text>
+            <text x="104" y="12" font-size="9">WSJ</text>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#b5563c">3</span>Beijing rejects the 'overcapacity' pretext</div>
+        <div class="ldet">Guo Jiakun calls 'overcapacity' a false proposition; a tariff war serves no one</div>
+        <div class="lfoot"><div class="lstat">FALSE<span>PROPOSITION</span></div><span class="chip c-off">OFFICIAL</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#2a3f6b">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A credit rating chip marked AA with a warning triangle and a falling line">
+          <rect width="136" height="46" fill="#3d5a80"/>
+          <rect x="14" y="9" width="52" height="28" rx="3" fill="#e9dfc8"/>
+          <g font-family="Georgia,'Times New Roman',Times,serif" font-weight="900" fill="#16203a">
+            <text x="26" y="31" font-size="20">AA</text>
+          </g>
+          <path d="M88 34 L102 18 L116 34 Z" fill="#f0c25c"/>
+          <rect x="100" y="24" width="4" height="6" fill="#16203a"/>
+          <rect x="100" y="31" width="4" height="2" fill="#16203a"/>
+          <path d="M74 40 L88 30 L100 34 L114 22 L130 12" fill="none" stroke="#f0c25c" stroke-width="2.5"/>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#2a3f6b">6</span>S&P puts Nvidia on negative credit watch</div>
+        <div class="ldet">Governance risk cited; five-year CDS at a record, stock closed nearly 4% lower</div>
+        <div class="lfoot"><div class="lstat">−9.5%<span>TWO SESSIONS</span></div><span class="chip c-con">CONFIRMED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#6b1f2e">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Port cranes at a Red Sea port with a drone flying overhead">
+          <rect width="136" height="46" fill="#6b1f2e"/>
+          <rect x="0" y="38" width="136" height="8" fill="#4d1622"/>
+          <g fill="#f0c25c">
+            <rect x="16" y="16" width="4" height="22"/><rect x="16" y="14" width="34" height="4"/>
+            <rect x="16" y="18" width="4" height="14" fill="#6b1f2e"/>
+            <rect x="46" y="22" width="9" height="7"/>
+            <rect x="58" y="12" width="4" height="26"/><rect x="58" y="10" width="30" height="4"/>
+            <rect x="58" y="14" width="4" height="12" fill="#6b1f2e"/>
+            <rect x="84" y="16" width="9" height="7"/>
+          </g>
+          <g fill="#2b3446"><rect x="98" y="26" width="30" height="12"/><rect x="104" y="22" width="18" height="5"/></g>
+          <g fill="#f7c948"><circle cx="112" cy="6" r="4"/><rect x="104" y="9" width="16" height="3"/><rect x="110" y="4" width="3" height="6"/></g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#6b1f2e">8</span>Houthis strike Jeddah and Jizan ports</div>
+        <div class="ldet">Two drone attacks on Saudi ports after the coalition struck Hodeidah</div>
+        <div class="lfoot"><div class="lstat">5,700<span>COALITION STRIKES</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#6b1f2e">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Refinery towers with a flame and a rising crude oil barrel">
+          <rect width="136" height="46" fill="#6b1f2e"/>
+          <rect x="0" y="40" width="136" height="6" fill="#4d1622"/>
+          <g fill="#2b3446">
+            <rect x="14" y="14" width="10" height="26"/><rect x="28" y="8" width="8" height="32"/>
+            <rect x="40" y="18" width="12" height="22"/><rect x="56" y="12" width="7" height="28"/>
+          </g>
+          <g fill="#f08030"><rect x="16" y="8" width="5" height="7"/><rect x="30" y="2" width="5" height="7"/>
+            <rect x="58" y="6" width="4" height="7"/></g>
+          <path d="M78 42c5-9 2-15 9-20 3 5 7 3 8 10 3-2 5 0 6 4-6 1-9 5-11 10z" fill="#f08030"/>
+          <path d="M83 43c3-5 2-9 6-12 2 3 5 2 5 6-5 0-7 2-9 6z" fill="#f7c948"/>
+          <g transform="translate(100 18)">
+            <rect x="0" y="0" width="16" height="20" rx="3" fill="#f0c25c"/>
+            <rect x="0" y="6" width="16" height="3" fill="#8a5a1e"/>
+            <rect x="2" y="12" width="12" height="2" fill="#8a5a1e"/>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#6b1f2e">9</span>Drone hits Ras Tanura, Saudi Arabia's largest refinery</div>
+        <div class="ldet">One-way drones hit the country's biggest refinery; Brent settled at $94.61</div>
+        <div class="lfoot"><div class="lstat">$94.61<span>BRENT, +3.51%</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#2a3f6b">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A podium in front of the White House with a calendar page for January">
+          <rect width="136" height="46" fill="#5c2430"/>
+          <rect x="0" y="40" width="136" height="6" fill="#401a24"/>
+          <path d="M14 12 L54 12 L54 26 L44 26 L44 34 L34 34 L34 26 L24 26 L24 34 L14 34 Z" fill="#e9dfc8"/>
+          <g fill="#16203a"><rect x="26" y="16" width="16" height="2"/><rect x="26" y="20" width="12" height="2"/></g>
+          <g transform="translate(76 8)">
+            <rect x="0" y="4" width="50" height="32" rx="2" fill="#fbf6ea"/>
+            <rect x="0" y="4" width="50" height="8" fill="#a3121f"/>
+            <g fill="#16203a"><text x="6" y="26" font-family="Georgia,serif" font-size="16" font-weight="900">JAN</text></g>
+            <g fill="#c8452f"><rect x="30" y="18" width="12" height="12"/></g>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#2a3f6b">11</span>Trump says the Iran war is funded through January</div>
+        <div class="ldet">He warns Democrats against halting the war, denies regime change</div>
+        <div class="lfoot"><div class="lstat">JAN<span>WAR FUNDED TO</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#6b1f2e">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tents in a rainstorm with a wind gust and a half-collapsed building">
+          <rect width="136" height="46" fill="#3a4a5e"/>
+          <g stroke="#8fa4bd" stroke-width="1.6"><path d="M4 2 L10 16"/><path d="M22 0 L16 16"/>
+            <path d="M46 2 L52 16"/><path d="M64 0 L58 16"/><path d="M86 2 L92 16"/>
+            <path d="M106 0 L100 16"/><path d="M128 2 L122 16"/></g>
+          <rect x="0" y="38" width="136" height="8" fill="#2b3446"/>
+          <g fill="#c9a46a"><path d="M14 38 L30 18 L46 38 Z"/><path d="M50 38 L66 20 L82 38 Z"/></g>
+          <g fill="#8f6f42"><path d="M28 38 L30 18 L34 38 Z"/><path d="M64 38 L66 20 L70 38 Z"/></g>
+          <g fill="#7a5c3a"><rect x="92" y="14" width="34" height="24"/></g>
+          <path d="M92 38 L104 24 L112 38 Z" fill="#4a3a28"/>
+          <g fill="#f0c25c" opacity="0.9"><circle cx="104" cy="34" r="2"/><circle cx="110" cy="30" r="1.6"/></g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#6b1f2e">14</span>Gaza civil defence warns of a humanitarian disaster</div>
+        <div class="ldet">Thousands in tents face flooding and collapsing buildings as a storm nears</div>
+        <div class="lfoot"><div class="lstat">STORM<span>APPROACHING</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#5b3a70">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A table with a peace plan document and a broken negotiation line">
+          <rect width="136" height="46" fill="#5b3a70"/>
+          <rect x="0" y="38" width="136" height="8" fill="#412a52"/>
+          <rect x="30" y="28" width="76" height="11" rx="2" fill="#e9dfc8"/>
+          <g fill="#5b3a70"><rect x="36" y="31" width="30" height="2"/><rect x="36" y="35" width="22" height="2"/></g>
+          <g fill="#fbf6ea"><rect x="76" y="4" width="16" height="21" rx="1"/>
+            <rect x="94" y="6" width="16" height="21" rx="1"/></g>
+          <g fill="#8a5a1e"><rect x="80" y="8" width="8" height="2"/><rect x="80" y="13" width="8" height="2"/>
+            <rect x="80" y="18" width="5" height="2"/><rect x="98" y="10" width="8" height="2"/>
+            <rect x="98" y="15" width="8" height="2"/></g>
+          <path d="M8 24 L26 16 L38 20" fill="none" stroke="#f0c25c" stroke-width="2.5"/>
+          <path d="M112 26 L122 18" stroke="#a3121f" stroke-width="2.5"/>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#5b3a70">17</span>Russia says it is too early to call a Ukraine peace deal close</div>
+        <div class="ldet">Peskov on the 28-point plan; Ryabkov rules out concessions; Witkoff to visit Moscow</div>
+        <div class="lfoot"><div class="lstat">28<span>POINT PLAN</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#5b3a70">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Military aircraft on a runway with an explosion beside them">
+          <rect width="136" height="46" fill="#3d5a80"/>
+          <rect x="0" y="32" width="136" height="14" fill="#2a3a52"/>
+          <g fill="#f0c25c"><rect x="4" y="38" width="14" height="3"/><rect x="34" y="38" width="14" height="3"/>
+            <rect x="64" y="38" width="14" height="3"/><rect x="94" y="38" width="14" height="3"/></g>
+          <g fill="#e9dfc8">
+            <path d="M18 24 L46 24 L54 28 L46 31 L18 31 Z"/>
+            <path d="M28 12 L32 12 L33 25 L27 25 Z"/><path d="M33 17 L46 21 L33 24 Z"/>
+          </g>
+          <g fill="#e9dfc8"><path d="M66 26 L96 26 L104 30 L96 32 L66 32 Z"/>
+            <path d="M78 14 L82 14 L83 27 L77 27 Z"/><path d="M83 19 L96 23 L83 26 Z"/></g>
+          <path d="M112 34c5-9 2-15 9-20 3 5 7 3 8 10 3-2 5 0 6 4-6 1-9 5-11 10z" fill="#f08030"/>
+          <path d="M117 35c3-5 2-9 6-12 2 3 5 2 5 6-5 0-7 2-9 6z" fill="#f7c948"/>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#5b3a70">18</span>Ukraine says it hit a major Russian air base</div>
+        <div class="ldet">Five missile-launching aircraft damaged; Russian refining down about 45%</div>
+        <div class="lfoot"><div class="lstat">5<span>PLANES DAMAGED</span></div><span class="chip c-con">CONFIRMED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#a8641b">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A nuclear research facility dome with a radar dish">
+          <rect width="136" height="46" fill="#8a5a1e"/>
+          <rect x="0" y="38" width="136" height="8" fill="#6b4515"/>
+          <g fill="#e9dfc8"><rect x="18" y="20" width="56" height="18"/>
+            <path d="M18 20a28 14 0 0 1 56 0Z"/></g>
+          <g fill="#16203a"><rect x="28" y="26" width="8" height="12"/><rect x="44" y="26" width="8" height="12"/>
+            <rect x="60" y="26" width="8" height="12"/></g>
+          <g fill="#f0c25c"><path d="M92 38 L108 18 L124 38 Z"/><rect x="106" y="24" width="4" height="8"/>
+            <rect x="106" y="33" width="4" height="3"/></g>
+          <g fill="#fbf6ea"><rect x="8" y="30" width="7" height="8"/><rect x="130" y="30" width="5" height="8"/></g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#a8641b">24</span>Kim calls for tactical nuclear weapons to be used in new ways</div>
+        <div class="ldet">He inspected a nuclear research facility; development continues</div>
+        <div class="lfoot"><div class="lstat">TACTICAL<span>NUCLEAR, NEW USES</span></div><span class="chip c-off">OFFICIAL</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#2a3f6b">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Satellites orbiting above the curve of the Earth">
+          <rect width="136" height="46" fill="#16203a"/>
+          <path d="M0 46 Q68 14 136 46 Z" fill="#2f405f"/>
+          <path d="M0 46 Q68 14 136 46 Z" fill="#3d5a80" opacity="0.7"/>
+          <g fill="#f0c25c">
+            <rect x="30" y="14" width="8" height="8"/><rect x="14" y="16" width="8" height="3"/>
+            <rect x="46" y="16" width="8" height="3"/>
+            <rect x="72" y="8" width="7" height="7"/><rect x="58" y="10" width="7" height="3"/>
+            <rect x="79" y="10" width="7" height="3"/>
+          </g>
+          <g fill="#e9dfc8"><rect x="31" y="24" width="6" height="5"/><rect x="73" y="17" width="5" height="4"/></g>
+          <g fill="#f0c25c" font-family="Helvetica,Arial,sans-serif" font-weight="700">
+            <text x="96" y="20" font-size="14">1m</text>
+            <text x="96" y="30" font-size="6">SATELLITES</text>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#2a3f6b">26</span>US clears SpaceX for one million satellites</div>
+        <div class="ldet">Approval for orbital data-centre megaconstellations</div>
+        <div class="lfoot"><div class="lstat">1m<span>SATELLITES</span></div><span class="chip c-off">OFFICIAL</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#3f6b8a">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A gavel beside a telephone linking two countries">
+          <rect width="136" height="46" fill="#2a3f6b"/>
+          <rect x="0" y="38" width="136" height="8" fill="#1d2d4c"/>
+          <g fill="#f0c25c"><rect x="20" y="8" width="26" height="12" rx="2"/>
+            <rect x="26" y="20" width="6" height="18"/><rect x="34" y="20" width="6" height="18"/>
+            <rect x="14" y="36" width="40" height="4"/></g>
+          <g fill="#e9dfc8"><path d="M68 12a12 12 0 0 1 12 12v4H56v-4a12 12 0 0 1 12-12Z"/>
+            <rect x="54" y="28" width="28" height="8" rx="3"/></g>
+          <path d="M62 36 Q46 44 30 38" fill="none" stroke="#f0c25c" stroke-width="2.5"/>
+          <g font-family="Helvetica,Arial,sans-serif" font-weight="700" fill="#ffffff">
+            <text x="94" y="18" font-size="9">CARACAS</text>
+            <text x="94" y="30" font-size="8">↔ WASHINGTON</text>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#3f6b8a">29</span>Venezuela condemns US 'crimes against humanity', opens a channel</div>
+        <div class="ldet">Saáb calls the 'Cartel de los Soles' a fiction, welcomes talks</div>
+        <div class="lfoot"><div class="lstat">CARACAS<span>CHANNEL OPENED</span></div><span class="chip c-con">CONFIRMED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#5b3a70">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Rows of grave markers under a falling number">
+          <rect width="136" height="46" fill="#5b3a70"/>
+          <rect x="0" y="40" width="136" height="6" fill="#412a52"/>
+          <g fill="#c9c0d4">
+            <path d="M12 40V26a3 3 0 0 1 6 0v14Z"/><path d="M28 40V22a3 3 0 0 1 6 0v18Z"/>
+            <path d="M44 40V28a3 3 0 0 1 6 0v12Z"/><path d="M60 40V24a3 3 0 0 1 6 0v16Z"/>
+            <path d="M76 40V27a3 3 0 0 1 6 0v13Z"/><path d="M92 40V23a3 3 0 0 1 6 0v17Z"/>
+            <path d="M108 40V29a3 3 0 0 1 6 0v11Z"/>
+          </g>
+          <g font-family="Georgia,'Times New Roman',Times,serif" font-weight="900" fill="#f0c25c">
+            <text x="96" y="18" font-size="20">500k</text>
+          </g>
+          <text x="98" y="27" font-family="Helvetica,Arial,sans-serif" font-size="6" font-weight="700" fill="#fbf6ea">DEATHS</text>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#5b3a70">33</span>Leaked Russian statistics point to nearly 500,000 deaths</div>
+        <div class="ldet">Independent analysis of leaked data contradicts official figures</div>
+        <div class="lfoot"><div class="lstat">500k<span>MILITARY DEATHS</span></div><span class="chip c-rep">REPORTED</span></div>
+      </div>
+
+      <div class="lcard" style="border-top-color:#2f6b52">
+        <svg class="lillus" viewBox="0 0 136 46" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Laboratory flasks and sealed packages in a drug raid">
+          <rect width="136" height="46" fill="#2f6b52"/>
+          <rect x="0" y="40" width="136" height="6" fill="#22503d"/>
+          <g fill="#e9dfc8"><path d="M22 8h10v10l8 18a3 3 0 0 1-3 4H17a3 3 0 0 1-3-4l8-18Z"/>
+            <path d="M52 8h10v10l8 18a3 3 0 0 1-3 4H47a3 3 0 0 1-3-4l8-18Z"/></g>
+          <g fill="#7bc4a0"><path d="M18 26h16l5 11a3 3 0 0 1-3 4H16a3 3 0 0 1-3-4Z"/>
+            <path d="M48 26h16l5 11a3 3 0 0 1-3 4H46a3 3 0 0 1-3-4Z"/></g>
+          <g fill="#f0c25c"><rect x="86" y="16" width="16" height="12" rx="2"/>
+            <rect x="104" y="22" width="16" height="12" rx="2"/><rect x="92" y="32" width="16" height="10" rx="2"/></g>
+          <g font-family="Helvetica,Arial,sans-serif" font-weight="700" fill="#ffffff">
+            <text x="84" y="10" font-size="9">$227m</text>
+          </g>
+        </svg>
+        <div class="lhead"><span class="b" style="background:#2f6b52">37</span>Nigeria seizes $227m meth lab built by five Mexicans</div>
+        <div class="ldet">NDLEA found an industrial-scale meth lab in Enugu; 1,512 kg seized</div>
+        <div class="lfoot"><div class="lstat">1,512<span>KG METHAMPHETAMINE</span></div><span class="chip c-con">CONFIRMED</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= 8. MAP + THE WIRE ================= -->
+  <div class="lower">
+    <div class="mapcol">
+      <div class="mhead">THE MAP · ONE PIN PER STORY · 53 PINS · THU 26 NOV 2026</div>
+<svg class="map" viewBox="0 0 470 300" role="img" aria-label="World map, countries coloured by region, with one numbered pin for each of the 53 stories that happened in a specific place">
+<rect x="0" y="0" width="470" height="300" fill="#cdd9e4"/>
+<g stroke="#b3c0cd" stroke-width="0.4" fill="none">
+<path d="M-9.6 0V300"/>
+<path d="M28.8 0V300"/>
+<path d="M67.1 0V300"/>
+<path d="M105.5 0V300"/>
+<path d="M143.9 0V300"/>
+<path d="M182.3 0V300"/>
+<path d="M220.6 0V300"/>
+<path d="M259.0 0V300"/>
+<path d="M297.4 0V300"/>
+<path d="M335.8 0V300"/>
+<path d="M374.1 0V300"/>
+<path d="M412.5 0V300"/>
+<path d="M450.9 0V300"/>
+<path d="M0 -5.8H470"/>
+<path d="M0 58.3H470"/>
+<path d="M0 122.4H470"/>
+<path d="M0 186.4H470"/>
+<path d="M0 250.5H470"/>
+<path d="M0 314.6H470"/>
+</g>
+<path d="M62,226L98,227L102,224L107,225L114,218L114,211L124,218L129,218L133,223L134,217L130,214L131,210L126,209L128,209L125,209L124,205L123,206L123,201L122,205L123,198L116,189L117,176L112,186L106,187L105,184L98,185L95,181L95,177L90,185L86,184L83,190L77,189L72,192L69,191L64,196L60,208L59,224L62,222ZM22,245L23,244L21,242L20,244ZM38,270L38,250L42,247L45,249L52,241L52,238L47,245L36,250L30,251L24,248L25,252L15,241L7,238L15,243L17,247L10,246L10,249L6,250L6,254L12,257L12,259L7,259L2,261L7,263L11,262L4,267L5,268L18,273ZM62,226L56,230L52,237L52,241L45,249L42,247L38,250L38,270L44,268L55,271L58,269L60,271L60,269L72,268L73,267L71,266L74,266L80,265L81,268L83,268L90,266L94,267L96,267L96,265L99,268L96,271L98,274L101,273L104,267L106,269L107,268L108,264L110,270L114,270L116,269L116,264L110,263L99,251L98,247L100,247L101,243L114,239L118,231L119,234L118,238L122,242L119,247L121,249L120,254L126,254L131,252L132,247L134,246L138,250L141,242L149,235L149,233L144,229L135,229L129,222L137,226L138,220L142,220L143,222L144,220L142,218L136,215L138,218L134,218L132,223L129,218L124,218L114,211L114,218L107,225L102,224L98,227ZM118,276L117,278L122,276ZM100,281L96,281L98,282ZM96,289L97,288L95,287L93,289ZM107,280L101,281L99,284L95,285L102,285L106,282L116,282L117,280ZM149,231L148,228L152,227L153,221L151,223L150,222L145,223L147,230ZM112,260L117,257L108,257L110,261ZM119,275L132,272L134,269L132,268L141,264L138,260L133,262L138,256L137,255L132,257L136,253L124,259L119,259L125,261L127,265L121,270L105,272L106,273L104,275L106,278L110,278L110,276L114,278L116,275ZM99,279L104,279L97,275L97,278ZM62,283L70,287L69,284ZM84,290L92,287L85,288L86,289ZM61,225L54,230L58,229ZM63,280L71,278L61,272L58,274L60,278L59,280ZM81,283L84,283L83,281L75,280L73,280L76,281L68,282L71,284L80,282L78,284L79,285ZM83,277L86,272L90,270L88,268L74,267L69,270L75,271L68,272L70,273L66,274L72,277L72,276L78,277L81,274L80,277ZM91,276L89,278L91,278L95,278L96,274L92,273L88,276ZM83,278L86,278L84,276ZM93,285L94,281L88,282L88,284ZM97,293L101,294L110,290L101,288L100,290L96,291ZM102,296L118,298L141,297L129,291L122,290L124,288L117,284L105,284L107,286L107,287L111,286L107,288L111,290L108,292L115,292L108,293ZM124,265L121,265L123,267ZM96,269L96,268L92,269L94,271ZM138,222L141,221L140,220ZM161,297L187,299L195,297L181,296L206,294L196,292L199,292L196,289L198,285L194,284L196,283L195,281L197,280L191,277L193,275L190,275L194,272L189,273L188,271L193,271L170,261L166,255L165,250L159,251L154,257L152,264L156,270L151,270L151,272L155,272L149,274L150,276L146,282L132,283L129,285L135,286L126,287L136,290L133,292L140,295L156,297L164,295Z" fill="#2a3f6b" class="land"/>
+<path d="M69,191L72,192L77,189L83,190L86,184L90,185L93,178L95,177L94,169L99,161L103,162L104,167L108,168L107,161L103,160L104,156L102,156L102,153L99,156L96,156L85,163L84,170L73,189L72,190L72,186L78,171L72,181L73,183ZM102,153L102,156L104,156L103,160L106,160L107,156L105,153ZM106,160L107,161L106,156ZM113,154L108,150L105,153L107,156L111,156ZM105,153L107,150L104,152ZM113,146L110,146L108,150L113,154ZM114,143L114,140L110,146L113,146ZM121,141L120,138L119,142L116,138L114,140L114,143L116,141L119,143ZM114,172L120,170L125,165L120,164L119,168L115,170L111,169ZM128,164L128,161L125,161L125,162L128,162L126,165ZM128,161L128,164L133,162ZM135,162L136,160L134,160ZM135,125L134,127L131,126L131,114L130,117L126,118L124,122L119,126L121,131L121,140L128,149L126,142L128,137L134,135ZM143,134L140,130L137,131L139,127L135,124L133,128L134,135L128,137L126,142L128,147L128,142L131,148L133,145L141,145L140,144L144,140ZM124,122L118,112L116,118L117,124L119,126ZM131,114L127,111L125,107L126,102L129,101L130,102L132,96L130,84L123,92L116,112L117,115L117,113L119,113L124,122L126,118L130,117ZM131,99L137,102L137,98L143,93L143,88L146,88L147,86L146,80L141,81L140,76L138,76L138,74L135,76L133,74L131,85ZM152,51L152,55L147,59L152,67L149,75L146,76L146,88L143,88L143,93L137,98L137,102L130,99L130,102L129,101L126,102L125,107L127,111L131,114L131,126L134,127L136,124L139,127L137,131L140,130L143,134L145,125L149,128L153,127L155,131L156,122L158,122L158,120L160,121L163,119L164,117L170,116L176,112L177,107L171,93L168,76L160,70L158,62ZM146,80L146,76L149,75L150,72L151,72L150,66L148,64L145,65L146,69L140,76L141,81L145,82ZM147,59L152,53L150,49L146,51ZM132,11L136,6L132,7ZM147,59L146,50L148,45L145,41L141,40L140,36L137,36L139,33L134,26L136,23L132,15L133,12L128,13L126,18L129,28L128,33L133,71L135,76L138,74L140,76L146,69L145,65L149,65L151,69L152,66ZM132,11L132,7L134,7L133,5L124,11L129,8ZM131,85L134,74L130,60L131,50L128,33L129,28L126,18L128,13L132,12L129,9L124,12L123,20L125,23L123,24L127,33L125,31L126,44L129,54ZM148,126L144,126L144,131L142,135L144,140L147,135L146,131ZM151,127L148,126L147,130L147,135L152,135Z" fill="#3f6b8a" class="land"/>
+<path d="M203,263L204,260L198,257L192,258L194,259L191,260L193,261L190,261ZM242,291L250,289L243,285L236,291ZM262,270L259,268L258,271L254,268L250,269L245,267L238,256L238,252L236,247L236,248L233,246L229,246L228,254L247,270L259,273L263,271L261,271ZM258,292L252,290L245,292ZM254,287L249,287L252,288ZM236,247L238,252L238,256L244,266L249,268L253,266L253,262L245,255L244,252L246,250L243,241L239,240ZM259,268L261,266L261,257L263,255L259,250L252,249L249,255L255,261L253,263L253,266L249,268L254,268L258,271ZM235,239L233,239L232,242L236,244ZM238,241L238,238L236,240ZM258,248L258,244L252,246L254,248ZM258,244L259,241L256,240L254,242L249,241L251,244L252,243L255,245ZM256,240L253,236L249,241L254,242ZM259,241L262,240L265,235L263,235L263,233L262,231L253,232L253,236ZM263,233L266,233L268,229L274,227L274,224L268,219L263,221L259,218L261,221L260,224L258,225L252,224L251,227L254,232L262,231ZM286,221L283,217L285,211L284,210L274,214L270,218L273,222L272,223L274,224L274,227L268,229L266,233L263,233L263,235L265,235L262,240L259,241L258,247L260,249L259,250L263,255L261,257L261,266L259,268L264,270L276,265L272,262L265,263L268,259L270,257L270,260L274,259L277,263L279,262L279,267L282,267L282,263L292,268L292,267L299,268L300,267L301,270L311,266L309,273L312,276L317,276L316,273L318,267L315,263L316,262L320,266L317,274L319,276L320,273L323,275L328,274L327,278L335,279L334,280L336,281L354,284L358,287L362,284L371,283L365,279L377,277L388,278L393,272L395,274L405,274L404,276L405,276L417,275L422,272L430,272L432,269L441,270L443,268L445,268L444,271L457,268L457,260L454,259L456,255L449,253L444,249L442,250L436,249L434,246L435,244L434,238L427,230L426,242L437,255L431,250L430,253L427,252L423,249L424,248L408,247L398,238L402,236L405,237L406,235L405,225L398,214L395,214L393,212L393,218L396,218L398,225L393,224L389,228L386,234L383,236L379,234L380,232L376,227L371,229L364,227L351,232L349,228L342,230L336,226L331,230L326,230L322,238L318,236L312,240L302,237L300,232L302,230L295,230L290,232L285,228L284,229L283,225ZM344,294L350,293L353,291L352,289L344,290L341,292ZM356,290L359,288L352,287ZM403,283L411,282L410,281L403,280L401,282ZM404,278L407,279L409,277ZM280,293L289,293L284,292ZM252,237L248,238L250,239ZM292,278L295,281L302,284L312,284L298,280L294,275L297,272L289,274ZM408,236L411,226L409,227L409,220L408,221L408,220L407,235L408,237ZM-6,264L-6,263L-6,264L-2,264L0,262L-3,261L-3,259L-11,262L-13,260L-13,268ZM-11,272L-13,274L-10,273ZM266,220L269,218L266,216L264,218ZM253,236L253,230L252,226L242,230L241,237L245,238ZM240,236L242,230L238,229L240,226L239,223L232,223L232,226L230,228L231,236L233,237L233,239ZM242,230L247,227L241,225L238,229ZM251,226L250,225L244,224L246,227ZM244,224L241,221L234,222L239,223L240,226ZM251,225L249,220L246,219L243,222L244,224ZM234,223L236,221L230,220L231,223ZM154,131L153,127L151,127L152,135ZM230,227L232,226L230,221L232,215L224,212L220,214L220,220L216,225L220,225L219,228L221,227L225,231ZM230,230L229,227L225,231ZM231,236L230,230L226,231L228,235ZM214,236L212,237L212,239L215,238ZM218,235L214,242L215,246L218,246L217,244L219,244L218,241L224,234L223,230L215,228L218,231L215,232L216,236ZM214,236L213,233L209,232L209,236L212,239L212,237ZM212,201L214,210L210,211L210,213L212,215L226,212L219,200L215,198ZM210,211L214,210L212,200L210,204ZM236,222L240,221L238,216L246,207L244,208L243,203L242,207L235,215L231,216L231,220ZM241,203L242,200L238,202ZM233,209L235,208L233,205ZM240,221L244,221L242,219L240,219ZM244,221L247,218L242,217L246,212L240,218ZM246,213L243,218L247,217ZM246,220L248,220L252,217L251,212L247,214ZM248,212L247,211L246,212L247,214ZM249,211L249,214L250,213ZM249,209L248,206L247,208L248,213ZM251,212L252,210L249,209L249,211ZM252,210L257,210L253,208L254,207L252,208L253,202L252,203L251,200L248,206ZM252,216L259,215L258,211L252,210ZM259,219L261,218L259,215L253,215L248,220L252,224L257,224ZM257,224L259,224L261,221L259,219Z" fill="#5b3a70" class="land"/>
+<path d="M280,201L270,200L269,198L267,200L261,199L258,200L256,206L260,210L266,211L272,209L278,210L280,206ZM256,211L260,210L256,207ZM274,214L281,212L283,209L276,210ZM283,204L279,209L281,210ZM282,211L284,210L285,211L288,208L286,204L285,206L283,204L282,207L281,210L283,209ZM269,192L270,200L277,201L276,195L270,191ZM269,192L268,185L267,188ZM268,191L273,193L273,190L270,189L272,187L269,184L268,185ZM273,190L273,193L276,195L277,201L280,201L282,198L281,194L285,186L280,184ZM285,186L281,194L282,198L280,206L283,204L285,206L288,200L296,203L302,200L301,186L305,179L302,176L297,177L296,180L292,179L287,186ZM268,185L271,186L270,189L273,190L280,184L285,183L290,171L294,170L294,165L286,162L283,158L279,160L278,157L267,182ZM290,163L291,158L290,156L279,149L279,160L283,158L286,162ZM294,170L296,175L300,170L297,163L291,158L290,163L294,165ZM289,174L292,174L295,178L294,170L290,171ZM285,186L284,183L283,184Z" fill="#6b1f2e" class="land"/>
+<path d="M219,197L220,191L211,184L210,180L207,179L203,168L200,168L203,178L210,186L211,193L214,198ZM211,181L211,177L206,177L205,168L200,167L203,168L207,179ZM211,180L211,184L220,191L219,197L220,198L233,201L232,195L235,185L234,178L238,172L229,164L226,163ZM234,187L232,195L234,201L236,200L235,195L237,191ZM255,169L253,164L243,172L240,170L235,174L234,187L237,192L247,186L249,192L254,190ZM270,169L255,169L255,189L267,188L266,181L264,185ZM254,140L251,149L255,169L270,169L272,161L270,158L266,141L265,148L262,143L261,144L257,142L255,144ZM262,130L261,132L258,132L253,141L256,144L257,142L263,143L265,148L266,142L265,139L268,134L266,130ZM284,139L281,133L277,131L273,130L269,132L265,139L270,153L271,154L275,152L279,142ZM270,153L272,161L278,149L273,154ZM286,147L284,139L279,142L278,145L278,147L280,145ZM276,119L275,128L284,139L286,147L289,148L285,134ZM273,113L266,120L268,127L266,132L268,134L272,130L277,131L276,119ZM266,120L261,120L261,121L262,130L266,132L268,127ZM262,120L262,118L260,116ZM266,120L273,113L275,101L270,98L267,98L260,110L262,120ZM265,103L267,101L268,92L268,87L267,92L265,94ZM262,105L265,102L265,93L261,91L257,85L252,86L251,95L253,95L253,100L261,94L259,103ZM267,98L271,98L275,101L275,92L267,81L268,72L264,68L265,66L263,76L265,87L262,89L261,91L265,93L268,87ZM287,96L288,89L283,70L281,68L278,74L279,86ZM263,76L258,77L255,85L257,85L262,90L265,87ZM260,76L256,69L252,69L249,66L248,70L249,84L255,85ZM248,70L248,62L246,61L242,64L238,86L255,85L249,84ZM243,62L248,62L248,70L250,66L252,69L256,69L260,76L263,76L264,68L262,66L265,66L264,63L258,52L248,49ZM260,61L257,59L258,58ZM260,61L258,58L257,59ZM264,66L262,66L262,68ZM238,110L243,110L245,106L248,108L250,107L251,99L253,99L253,95L251,95L252,86L237,86L240,99ZM246,130L242,114L241,112L238,113L238,112L237,117L238,118L240,117L241,120L239,127L243,126L244,130ZM260,113L262,105L259,103L261,94L257,98L251,99L250,107L248,108L245,106L243,110L238,110L238,112L241,112L243,115L247,133L251,131L255,134L261,132L263,127ZM258,134L251,131L247,133L243,127L241,132L242,138L245,139L252,146ZM253,164L253,156L251,149L252,146L245,139L242,138L240,153L243,166L241,171L243,172ZM241,171L243,166L240,153L240,149L239,151L234,150L229,152L227,151L227,147L225,148L222,154L227,155L228,163L238,172ZM226,136L228,152L234,150L239,151L241,148L237,137L235,137L231,132L228,136ZM241,150L242,144L240,143L242,139L241,132L243,126L234,127L233,132L234,136L237,137ZM237,127L241,125L241,120L236,114L233,120ZM234,127L237,127L237,125L234,125ZM226,136L223,145L225,148L227,145ZM222,146L223,135L219,132L218,136L218,146ZM215,144L217,151L222,154L224,147L218,146L218,143ZM207,149L207,155L215,155L214,175L216,175L228,163L227,155L221,154L217,151L214,144L212,144L210,148ZM200,167L205,168L206,177L211,177L211,180L216,175L214,175L215,155L207,155L206,153L203,158L200,157ZM200,151L199,154L203,158L207,149L200,149L200,150L204,151ZM200,149L204,149L204,148L202,146ZM204,149L210,148L212,141L210,138L207,144L205,141L203,144ZM205,141L207,144L209,140L207,137ZM211,139L212,132L207,137L209,141L210,138ZM212,144L218,143L218,133L212,132ZM262,117L260,113L260,116Z" fill="#2f6b52" class="land"/>
+<path d="M365,161L364,164L367,165ZM327,212L326,217L330,219L330,222L333,222L336,227L341,222L341,218L346,216L348,213L359,210L365,212L368,215L368,218L378,221L376,224L373,224L374,228L378,228L379,234L382,235L386,234L389,228L393,224L398,225L396,218L393,218L392,212L392,213L389,210L388,211L380,205L381,209L375,204L378,201L382,202L378,196L381,190L381,182L377,174L367,168L366,166L360,172L355,170L355,167L352,169L351,173L349,173L351,181L348,183L347,185L338,180L338,182L334,182L325,189L325,195L318,206ZM336,227L342,230L349,228L351,232L364,227L374,228L373,223L376,224L378,222L370,217L368,218L366,213L359,210L348,213L346,216L341,218L341,222ZM381,174L380,169L379,172L381,176Z" fill="#b5563c" class="land"/>
+<path d="M392,212L388,206L389,204L386,202L384,207L388,211L389,210L392,213ZM387,202L390,204L391,200L390,197L387,195ZM407,205L405,197L399,193L398,196L393,194L394,193L393,188L391,193L395,197L399,198L400,201L401,200L404,203L405,210L406,210ZM411,215L412,216L412,214L409,211L407,213L405,210L407,219ZM395,193L398,195L396,192Z" fill="#a8641b" class="land"/>
+<path d="M349,182L343,169L341,172L342,175L338,178L338,168L336,168L327,156L326,144L323,139L318,156L317,168L314,167L311,173L315,174L313,180L316,182L320,191L318,195L324,198L325,189L328,186L326,183L333,179L337,178L338,182L339,179L342,179L342,181L345,184L347,185ZM324,198L318,195L320,191L316,182L313,180L315,174L311,173L309,176L302,176L305,179L301,186L309,186L309,189L312,190L316,200L320,201ZM309,202L312,201L314,204L316,200L320,201L316,200L312,190L309,189L309,186L304,184L301,186L302,198L304,197ZM337,181L337,178L333,179L326,183L327,185L328,187ZM329,138L327,135L327,143ZM343,169L342,166L341,171L338,169L338,178L342,175L341,172ZM353,166L349,162L352,148L351,144L349,157L349,158L346,156L345,156L342,168L346,179L350,182L349,173L351,173L352,169L354,169ZM359,153L356,153L356,148L353,151L352,142L355,136L354,135L350,139L352,148L349,162L353,166L354,160L357,161L359,159ZM362,152L359,153L358,161L354,160L353,166L355,170L358,166L358,163L362,156ZM356,148L356,153L362,152L361,146L357,145ZM358,145L362,149L362,155L355,170L360,172L363,168L360,163L365,151L364,147L359,141ZM353,136L356,134L358,125L354,128ZM376,131L373,132L372,126L365,125L371,132L372,132L374,137L378,134ZM406,117L406,103L402,105L403,107L402,111L396,115L396,114L394,117L396,118L392,121L397,121L399,115L401,119ZM376,131L377,124L376,124L374,114L366,116L365,127L366,124L370,125L373,132ZM391,117L393,114L389,115ZM382,124L385,126L384,123L379,123L379,121L380,120L383,121L381,118L383,111L380,117L378,110L377,117L378,123L380,125ZM376,105L378,104L374,104ZM364,109L373,105L361,107L360,110ZM358,120L360,116L360,110L359,110L346,134L349,134ZM382,144L384,146L382,142ZM387,140L386,134L383,139L381,137L386,143ZM382,161L381,153L384,152L384,149L379,152L378,155L380,162ZM381,147L383,146L381,145ZM386,148L385,144L384,149ZM336,226L333,222L330,222L330,219L326,217L327,212L319,214L318,212L315,213L311,208L307,215L303,214L298,219L295,218L295,210L292,212L290,211L288,217L291,218L291,222L286,221L283,225L284,229L285,228L288,232L295,230L302,230L300,232L302,237L312,240L318,236L322,238L326,230L331,230ZM295,210L295,218L298,219L303,214L307,215L311,208L315,212L314,210L317,209L316,207L312,209L310,206L310,201L298,213ZM290,211L292,212L296,210L298,213L309,202L303,197L297,203L292,201L291,207L291,209L293,209L292,212L291,209ZM315,212L319,214L327,212L316,206L313,206L317,209L314,210ZM310,201L310,206L314,209L313,206L318,206L320,204L320,202L316,200L314,204ZM342,181L342,179L338,180L340,182Z" fill="#0f6f77" class="land"/>
+<path d="M415,36L415,31L413,30L411,36ZM387,54L383,51L378,51L376,48L372,50L373,56L370,67L371,77L371,75L374,79L380,81L386,92L388,93L391,91L395,99L400,98L399,91L405,85L408,100L413,82L422,68L422,56L418,44L413,40L411,42L409,40L406,42L402,50L401,48L402,53L400,49L397,54L393,56ZM453,38L450,35L450,44L447,50L452,43L455,43ZM444,30L448,37L448,35L449,36L448,30L445,26L442,24L439,26ZM406,117L415,110L414,107L419,100L415,101L411,106L408,103L406,103ZM421,115L422,112L419,117ZM420,110L416,110L419,111L421,114ZM438,78L439,76L436,80Z" fill="#8a5a1e" class="land"/>
+<path d="M312,20L314,18L312,17Z" fill="#3a4354" class="land"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="271.5" cy="168.1" r="9" fill="#6b1f2e" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="265.7" cy="189.5" r="9" fill="#6b1f2e" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="267.1" cy="194.6" r="9" fill="#6b1f2e" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="384.3" cy="202.2" r="9" fill="#a8641b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="353.5" cy="124.9" r="9" fill="#0f6f77" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="382.8" cy="205.3" r="9" fill="#a8641b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="382.8" cy="205.3" r="9" fill="#a8641b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="135.4" cy="145.0" r="9" fill="#3f6b8a" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="265.7" cy="189.5" r="9" fill="#6b1f2e" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="384.8" cy="177.9" r="9" fill="#a8641b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="357.1" cy="108.7" r="9" fill="#0f6f77" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="353.5" cy="124.9" r="9" fill="#0f6f77" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="349.6" cy="151.4" r="9" fill="#0f6f77" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="425.0" cy="101.6" r="9" fill="#8a5a1e" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="226.4" cy="231.7" r="9" fill="#5b3a70" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="360.0" cy="170.7" r="9" fill="#b5563c" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="127.3" cy="209.6" r="9" fill="#2a3f6b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="384.3" cy="202.2" r="9" fill="#a8641b" stroke="#16203a" stroke-width="0.7"/>
+<circle cx="261.6" cy="186.4" r="6.4" fill="#2f6b52" stroke="#ffffff" stroke-width="1.3"/>
+<text x="261.6" y="188.8" class="pin" text-anchor="middle">1</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">2</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">3</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">4</text>
+<circle cx="95.8" cy="207.8" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="95.8" y="210.2" class="pin" text-anchor="middle">5</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">6</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">7</text>
+<circle cx="271.5" cy="168.1" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="271.5" y="170.5" class="pin" text-anchor="middle">8</text>
+<circle cx="284.9" cy="180.1" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="284.9" y="182.5" class="pin" text-anchor="middle">9</text>
+<circle cx="293.4" cy="178.9" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="293.4" y="181.3" class="pin" text-anchor="middle">10</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">11</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">12</text>
+<circle cx="222.1" cy="232.4" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="222.1" y="234.8" class="pin" text-anchor="middle">13</text>
+<circle cx="265.7" cy="189.5" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="265.7" y="191.9" class="pin" text-anchor="middle">14</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">15</text>
+<circle cx="267.1" cy="194.6" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="267.1" y="197.0" class="pin" text-anchor="middle">16</text>
+<circle cx="270.5" cy="241.3" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="270.5" y="243.7" class="pin" text-anchor="middle">17</text>
+<circle cx="261.3" cy="230.0" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="261.3" y="232.4" class="pin" text-anchor="middle">18</text>
+<circle cx="227.8" cy="231.0" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="227.8" y="233.4" class="pin" text-anchor="middle">19</text>
+<circle cx="384.3" cy="202.2" r="6.4" fill="#a8641b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="384.3" y="204.6" class="pin" text-anchor="middle">20</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">21</text>
+<circle cx="353.5" cy="124.9" r="6.4" fill="#0f6f77" stroke="#ffffff" stroke-width="1.3"/>
+<text x="353.5" y="127.3" class="pin" text-anchor="middle">23</text>
+<circle cx="382.8" cy="205.3" r="6.4" fill="#a8641b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="382.8" y="207.7" class="pin" text-anchor="middle">24</text>
+<circle cx="382.8" cy="205.3" r="6.4" fill="#a8641b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="382.8" y="207.7" class="pin" text-anchor="middle">25</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">26</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">27</text>
+<circle cx="102.8" cy="212.4" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="102.8" y="214.8" class="pin" text-anchor="middle">28</text>
+<circle cx="135.4" cy="145.0" r="6.4" fill="#3f6b8a" stroke="#ffffff" stroke-width="1.3"/>
+<text x="135.4" y="147.4" class="pin" text-anchor="middle">29</text>
+<circle cx="122.8" cy="130.0" r="6.4" fill="#3f6b8a" stroke="#ffffff" stroke-width="1.3"/>
+<text x="122.8" y="132.4" class="pin" text-anchor="middle">30</text>
+<circle cx="96.6" cy="187.4" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="96.6" y="189.8" class="pin" text-anchor="middle">31</text>
+<circle cx="265.7" cy="189.5" r="6.4" fill="#6b1f2e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="265.7" y="191.9" class="pin" text-anchor="middle">32</text>
+<circle cx="270.5" cy="241.3" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="270.5" y="243.7" class="pin" text-anchor="middle">33</text>
+<circle cx="123.3" cy="205.7" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.3" y="208.1" class="pin" text-anchor="middle">34</text>
+<circle cx="384.8" cy="177.9" r="6.4" fill="#a8641b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="384.8" y="180.3" class="pin" text-anchor="middle">35</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">36</text>
+<circle cx="230.5" cy="136.1" r="6.4" fill="#2f6b52" stroke="#ffffff" stroke-width="1.3"/>
+<text x="230.5" y="138.5" class="pin" text-anchor="middle">37</text>
+<circle cx="357.1" cy="108.7" r="6.4" fill="#0f6f77" stroke="#ffffff" stroke-width="1.3"/>
+<text x="357.1" y="111.1" class="pin" text-anchor="middle">38</text>
+<circle cx="353.5" cy="124.9" r="6.4" fill="#0f6f77" stroke="#ffffff" stroke-width="1.3"/>
+<text x="353.5" y="127.3" class="pin" text-anchor="middle">39</text>
+<circle cx="349.6" cy="151.4" r="6.4" fill="#0f6f77" stroke="#ffffff" stroke-width="1.3"/>
+<text x="349.6" y="153.8" class="pin" text-anchor="middle">40</text>
+<circle cx="425.0" cy="101.6" r="6.4" fill="#8a5a1e" stroke="#ffffff" stroke-width="1.3"/>
+<text x="425.0" y="104.0" class="pin" text-anchor="middle">41</text>
+<circle cx="220.6" cy="134.3" r="6.4" fill="#2f6b52" stroke="#ffffff" stroke-width="1.3"/>
+<text x="220.6" y="136.7" class="pin" text-anchor="middle">42</text>
+<circle cx="226.4" cy="231.7" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="226.4" y="234.1" class="pin" text-anchor="middle">43</text>
+<circle cx="210.2" cy="205.1" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="210.2" y="207.5" class="pin" text-anchor="middle">44</text>
+<circle cx="158.9" cy="88.8" r="6.4" fill="#3f6b8a" stroke="#ffffff" stroke-width="1.3"/>
+<text x="158.9" y="91.2" class="pin" text-anchor="middle">45</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">46</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">47</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">48</text>
+<circle cx="360.0" cy="170.7" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="360.0" y="173.1" class="pin" text-anchor="middle">49</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">50</text>
+<circle cx="370.8" cy="207.2" r="6.4" fill="#b5563c" stroke="#ffffff" stroke-width="1.3"/>
+<text x="370.8" y="209.6" class="pin" text-anchor="middle">51</text>
+<circle cx="227.8" cy="231.0" r="6.4" fill="#5b3a70" stroke="#ffffff" stroke-width="1.3"/>
+<text x="227.8" y="233.4" class="pin" text-anchor="middle">53</text>
+<circle cx="127.3" cy="209.6" r="6.4" fill="#2a3f6b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="127.3" y="212.0" class="pin" text-anchor="middle">54</text>
+<circle cx="384.3" cy="202.2" r="6.4" fill="#a8641b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="384.3" y="204.6" class="pin" text-anchor="middle">55</text>
+</svg>
+      <div class="mleg">
+        <span class="dot" style="background:#2a3f6b"></span>NORTH AMERICA
+        <span class="dot" style="background:#3f6b8a"></span>LATIN AMERICA
+        <span class="dot" style="background:#5b3a70"></span>EUROPE
+        <span class="dot" style="background:#6b1f2e"></span>MIDDLE EAST
+        <span class="dot" style="background:#2f6b52"></span>AFRICA
+        <span class="dot" style="background:#b5563c"></span>EAST ASIA
+        <span class="dot" style="background:#a8641b"></span>KOREA &amp; JAPAN
+        <span class="dot" style="background:#0f6f77"></span>SOUTH &amp; SE ASIA
+        <span class="dot" style="background:#8a5a1e"></span>OCEANIA
+        <span class="dot" style="background:#3a4354"></span>WORLD<br>
+        PIN NUMBER = STORY NUMBER IN THE WIRE · STORIES 22 AND 52 ARE GLOBAL AND CARRY NO PIN
+      </div>
+    </div>
+
+    <div class="wirecol">
+      <div class="whead">THE WIRE · THE OTHER 38 STORIES, IN REGIONAL ORDER · ALL DATED THU 26 NOV 2026</div>
+      <div class="wcols">
+<div class="wcol">
+<div class="w"><span class="b" style="background:#1f4e79">5</span><span class="tg" style="background:#1f4e79">ECON</span> Fed Beige Book: growth slight to moderate, prices still sticky</div>
+<div class="w"><span class="b" style="background:#2a3f6b">7</span><span class="tg" style="background:#2a3f6b">BUSI</span> Vance says Nvidia's Huang needs no pardon and is not under investigation</div>
+<div class="w"><span class="b" style="background:#a3121f">12</span><span class="tg" style="background:#a3121f">CONF</span> US reconsiders targeting Iran's leadership, Washington weighs Iran funding</div>
+<div class="w"><span class="b" style="background:#5b3a70">15</span><span class="tg" style="background:#5b3a70">DIPL</span> UN chief urges an irreversible path to two states for Palestinians</div>
+<div class="w"><span class="b" style="background:#1f4e79">21</span><span class="tg" style="background:#1f4e79">MARK</span> Gold breaks below $3,500, its lowest since September 2025</div>
+<div class="w"><span class="b" style="background:#2f6b52">27</span><span class="tg" style="background:#2f6b52">SOCI</span> New York Thanksgiving parade postponed by storm for the first time in a century</div>
+<div class="w"><span class="b" style="background:#2f6b52">28</span><span class="tg" style="background:#2f6b52">SOCI</span> US Army detonates five tonnes of degraded lead azide in Iowa</div>
+<div class="w"><span class="b" style="background:#2f6b52">31</span><span class="tg" style="background:#2f6b52">SOCI</span> Two US states sue SpaceX over AI-generated porn</div>
+<div class="w"><span class="b" style="background:#5b3a70">34</span><span class="tg" style="background:#5b3a70">DIPL</span> Kushner: Europe spent more on Russian fuel than on Ukraine</div>
+<div class="w"><span class="b" style="background:#5b3a70">36</span><span class="tg" style="background:#5b3a70">DIPL</span> India urges human control of AI used in war at the UN Security Council</div>
+</div>
+<div class="wcol">
+<div class="w"><span class="b" style="background:#2a3f6b">54</span><span class="tg" style="background:#2a3f6b">BUSI</span> AI demand doubts push BlackRock to cut $25bn from data-centre deals</div>
+<div class="w"><span class="b" style="background:#a3121f">30</span><span class="tg" style="background:#a3121f">CONF</span> Colombia: five south-western provinces plunge into blackout</div>
+<div class="w"><span class="b" style="background:#2f6b52">45</span><span class="tg" style="background:#2f6b52">SCIE</span> CILAC 2026 opens in Brasilia with 2,900 participants</div>
+<div class="w"><span class="b" style="background:#3f6b8a">13</span><span class="tg" style="background:#3f6b8a">POLI</span> Britain sanctions the Houthis and four senior officials</div>
+<div class="w"><span class="b" style="background:#3f6b8a">19</span><span class="tg" style="background:#3f6b8a">POLI</span> European Parliament approves the EU's 2027 budget</div>
+<div class="w"><span class="b" style="background:#0f6f77">43</span><span class="tg" style="background:#0f6f77">SPOR</span> Liverpool beat Club Brugge 3-0 to reach the Champions League last 16</div>
+<div class="w"><span class="b" style="background:#0f6f77">44</span><span class="tg" style="background:#0f6f77">SPOR</span> Champions League: Pochettino still waiting for his first Manchester United win</div>
+<div class="w"><span class="b" style="background:#1f4e79">53</span><span class="tg" style="background:#1f4e79">ECON</span> European Parliament budget clears as Washington targets 14 economies</div>
+<div class="w"><span class="b" style="background:#a3121f">16</span><span class="tg" style="background:#a3121f">CONF</span> Two explosions in southern Lebanon as Aoun and Hezbollah clash</div>
+<div class="w"><span class="b" style="background:#5b3a70">32</span><span class="tg" style="background:#5b3a70">MEDI</span> Gaza journalist killed in an Israeli strike wins the Rory Peck Prize</div>
+</div>
+<div class="wcol">
+<div class="w"><span class="b" style="background:#0f6f77">42</span><span class="tg" style="background:#0f6f77">SPOR</span> Ghana inaugurates a World Cup oversight committee</div>
+<div class="w"><span class="b" style="background:#3f6b8a">46</span><span class="tg" style="background:#3f6b8a">TECH</span> China leads 78 international AI standards</div>
+<div class="w"><span class="b" style="background:#8a5a1e">47</span><span class="tg" style="background:#8a5a1e">CRIM</span> China's fraud suspect extradited from Russia in a ¥15bn case</div>
+<div class="w"><span class="b" style="background:#8a5a1e">48</span><span class="tg" style="background:#8a5a1e">CRIM</span> Chinese official Gao Yichen sentenced to 11 years for bribery</div>
+<div class="w"><span class="b" style="background:#2f6b52">49</span><span class="tg" style="background:#2f6b52">SOCI</span> Guangxi moves to crush illegal bird hunting and trade</div>
+<div class="w"><span class="b" style="background:#8a5a1e">50</span><span class="tg" style="background:#8a5a1e">CRIM</span> Chinese authorities break a ring smuggling 38,000 pregnant women's blood samples</div>
+<div class="w"><span class="b" style="background:#3f6b8a">51</span><span class="tg" style="background:#3f6b8a">TECH</span> China's 600MW compressed-air storage expander rolls off the line</div>
+<div class="w"><span class="b" style="background:#1f4e79">20</span><span class="tg" style="background:#1f4e79">ECON</span> South Korea weighs expanding its ₩10tn stock stabilisation fund</div>
+<div class="w"><span class="b" style="background:#5b3a70">25</span><span class="tg" style="background:#5b3a70">DIPL</span> North Korea expels the Swiss diplomatic office in Pyongyang</div>
+<div class="w"><span class="b" style="background:#4a5a1f">35</span><span class="tg" style="background:#4a5a1f">MILI</span> US deploys F-15EX fighters to Kadena base in Okinawa</div>
+</div>
+<div class="wcol">
+<div class="w"><span class="b" style="background:#2f6b52">55</span><span class="tg" style="background:#2f6b52">SOCI</span> South Korea's births rose 14.3% in nine months, a record</div>
+<div class="w"><span class="b" style="background:#b5563c">23</span><span class="tg" style="background:#b5563c">ENER</span> Asian crude imports fall to the lowest since 2018</div>
+<div class="w"><span class="b" style="background:#1f4e79">38</span><span class="tg" style="background:#1f4e79">ECON</span> Indonesia posts a Rp117.8tn budget surplus to September</div>
+<div class="w"><span class="b" style="background:#4a5a1f">39</span><span class="tg" style="background:#4a5a1f">MILI</span> Singapore and Japan to make their naval exercise regular</div>
+<div class="w"><span class="b" style="background:#3f6b8a">40</span><span class="tg" style="background:#3f6b8a">POLI</span> Thailand's PM orders crackdown on nominee businesses and drug networks</div>
+<div class="w"><span class="b" style="background:#5b3a70">41</span><span class="tg" style="background:#5b3a70">DIPL</span> Solomon Islands and Australia sign a new treaty</div>
+<div class="w"><span class="b" style="background:#1f4e79">22</span><span class="tg" style="background:#1f4e79">MARK</span> Bitcoin slides below $58,000 amid the tech selloff</div>
+<div class="w"><span class="b" style="background:#1f4e79">52</span><span class="tg" style="background:#1f4e79">MARK</span> European stocks fall and Shanghai drops 2% as AI trade cools</div>
+</div>
+      </div>
+      <div class="datestrip">
+        <div class="datebox">
+          <div class="dh">THIS IMAGE COVERS ONE DAY</div>
+          <div class="dtbig">Thursday<br>26 November 2026</div>
+          <div class="dt">00:00–23:59 UTC · 55 stories · 9 regions · 18 sections</div>
+        </div>
+        <div class="countbox">
+          <div class="fcounts">17 LEAD STORIES DRAWN · 38 BRIEFS WIRED · 53 MAP PINS</div>
+          <div class="fnote">Every figure, name and place on this page comes from that day's own reporting; each item's badge states how sure the record is — OFFICIAL (a government, regulator or central-bank statement), CONFIRMED (named outlets), REPORTED (one side's account), CLAIM (denied or unverified).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 9. FOOTER ================= -->
+  <div class="foot">
+    <div>THE WORLD IN ONE DAY · THURSDAY 26 NOVEMBER 2026 · 55 VERIFIED STORIES</div>
+    <div class="foot-r">DRAWN AND SOURCED FROM THE DAY'S OWN REPORTING · NO NETWORK AT GRADING TIME</div>
+  </div>
+
+
+
+</div>
+</body>
+</html>

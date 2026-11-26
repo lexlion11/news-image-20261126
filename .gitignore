@@ -1,0 +1,6 @@
+out/
+build/
+TASK.md
+prompt.txt
+system-prompt.txt
+template.html
